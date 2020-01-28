@@ -1,0 +1,27 @@
+propel:
+  company:
+    id:            ~
+    name:          { type: varchar(255), required: true }
+    cite:          { type: varchar(255) }
+    address:       { type: varchar(255) }
+    phone:         { type: varchar(255) }
+    body:          { type: longvarchar }
+    created_at:    ~
+  cv:
+    id:            ~
+    company_id:    { type: integer, required: true, foreignTable: company, foreignReference: id, OnDelete: cascade }
+    position:      { type: varchar(255) }
+    cv_file:       { type: varchar(255) }
+    cv_text:       { type: longvarchar }
+    date_created:  { type: varchar(255) }
+    date_modified: { type: varchar(255) }
+    body:          { type: longvarchar }
+    created_at:    ~
+  cv_sending:
+    id:            ~
+    cv_id: ~
+    receiver_mail: { type: varchar(255) }
+    sending_date:  { type: varchar(255) }
+    sending_time:  { type: varchar(255) }
+    body:          { type: longvarchar }
+    created_at:    ~
